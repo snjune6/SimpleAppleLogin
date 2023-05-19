@@ -31,7 +31,6 @@ struct ContentView: View {
         }
         .onAppear {
             // Check credential state
-            print("test")
             checkCredentialState()
         }
         .onReceive(NotificationCenter.default.publisher(for: ASAuthorizationAppleIDProvider.credentialRevokedNotification)) { _ in
@@ -63,8 +62,8 @@ struct ContentView: View {
     }
     
     func checkCredentialState() {
-        let provider = ASAuthorizationAppleIDProvider()//000787.090a07c989b4464f933df0566cb842a5.0805 김준태 000609.8daa3fe7269a418caf7684fab451f31c.0304 조예주
-        provider.getCredentialState(forUserID: "000787.090a07c989b4464f933df0566cb842a5.0805") { credentialState, error in
+        let provider = ASAuthorizationAppleIDProvider()
+        provider.getCredentialState(forUserID: userIdentifierTemp) { credentialState, error in
             if let error = error {
                 // Error checking credential state
                 print("Error checking credential state: \(error.localizedDescription)")
