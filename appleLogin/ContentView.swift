@@ -26,7 +26,7 @@ struct ContentView: View {
             .frame(width: 200, height: 44)
             
             if userIdentifierTemp != "" {
-                Text("userIdentifierTemp : \(userIdentifierTemp)")
+                Text("userIdentifierTemp1 : \(userIdentifierTemp)")
             }
         }
         .onAppear {
